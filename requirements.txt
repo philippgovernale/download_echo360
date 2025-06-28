@@ -1,5 +1,5 @@
 python-dateutil
-selenium
+selenium>=4.6.0
 ffmpy
 requests
 gevent

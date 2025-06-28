@@ -1,6 +1,8 @@
 # Download Echo360 Videos
 A user-friendly, command-line Python tool for downloading lecture videos from any university's Echo360 system. Simply input the course URL to start the downloading process.
 
+*This fork introduces small fixes to make the script work on newer versions of Google Chrome and on Windows*
+
 ### Features:
 - Web-driver emulation to retrieve original streaming links (Chrome)
 - Hls downloader for simultaneous downloading and combining of video parts
@@ -11,25 +13,26 @@ Instructions for finding the course URL can be found in the [FAQ](#faq) section.
 
 ## Getting Started
 
-**Install ffmpeg**
-```shell
-brew update
-brew upgrade
-brew install ffmpeg
-```
+**Dependencies**
+* Google Chrome (not Chromium)
+* ffmpeg
 
 ## Automated Installation
-Tested on Linux / MacOS. Should work for windows aswell. 
+Tested on Linux / MacOS / Windows
 
 **Linux / MacOS**
 
 ```shell
 ./run.sh COURSE_URL  # where COURSE_URL is your course url
 ```
+**Windows**
+```
+python download_echo360.py COURSE_URL
+```
 
 ## Script args
 ```shell
-python download_echo360.py URL [-o --output OUTPUT_PATH] 
+python download_echo360.py URL [-o --output OUTPUT_PATH]
 
 positional arguments:
     URL                 Full URL of the echo360 course page, or only the UUID
